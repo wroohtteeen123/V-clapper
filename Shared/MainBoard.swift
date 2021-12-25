@@ -39,7 +39,7 @@ struct MainBoard: View {
         
         let fmtr = DateFormatter()
         
-        fmtr.dateFormat = "yy年MM月dd日 HH时mm分ss秒"
+        fmtr.dateFormat = "yy年MM月dd日 HH时mm分ss秒+SSS"
         
         return fmtr
         
@@ -57,7 +57,7 @@ struct MainBoard: View {
                 .font(.title)
                 .fontWeight(.light)
             
-            Text(timeNow).font(.largeTitle).fontWeight(.black).multilineTextAlignment(.leading).lineLimit(/*@START_MENU_TOKEN@*/3/*@END_MENU_TOKEN@*/).frame(width: 7000.0, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/).onReceive(timer) {
+            Text(timeNow).font(.custom("Avenir Next Condensed", size: 40)).fontWeight(.black).multilineTextAlignment(.leading).lineLimit(/*@START_MENU_TOKEN@*/3/*@END_MENU_TOKEN@*/).frame(width: 7000.0, height: /*@START_MENU_TOKEN@*/100.0/*@END_MENU_TOKEN@*/).onReceive(timer) {
                 _ in self.timeNow = dateFormatter.string(from: Date())
             }
         }
