@@ -33,7 +33,7 @@ struct MainBoard: View {
     
     @State var timeNow = ""
     
-    let timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 0.001, on: .main, in: .common).autoconnect()
     
     var dateFormatter: DateFormatter {
         
